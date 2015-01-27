@@ -10,6 +10,7 @@ class RubyRangeNotifier
 
   def didRangeBeaconsInRegion(beacons, region)
     p "didRangeBeaconsInRegion(beacons, region)"
+    @events[:beacons_found].call(beacons) unless @events[:beacons_found].nil?
     if beacons.size == 0
       p "no beacon"
       @change_count = 0

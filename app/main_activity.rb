@@ -14,16 +14,22 @@ class MainActivity < Android::App::Activity
     linear_layout.setOrientation(Android::Widget::LinearLayout::VERTICAL)
     setContentView(linear_layout)
 
+    @total_beacon_text_view = Android::Widget::TextView.new(self)
+    @total_beacon_text_view.setText("Total Beacons: 0")
+    @total_beacon_text_view.setTextSize(30.0)
+    @total_beacon_text_view.setTextColor(Android::Graphics::Color::CYAN)
+
     @beacon_text_view = Android::Widget::TextView.new(self)
-    @beacon_text_view.setText("Beacon: not found")
+    @beacon_text_view.setText("Current Beacon: not found")
     @beacon_text_view.setTextSize(30.0)
     @beacon_text_view.setTextColor(Android::Graphics::Color::CYAN)
 
     @closest_beacon_text_view = Android::Widget::TextView.new(self)
-    @closest_beacon_text_view.setText("Beacon: not found")
+    @closest_beacon_text_view.setText("Stay Beacon: not found")
     @closest_beacon_text_view.setTextSize(30.0)
     @closest_beacon_text_view.setTextColor(Android::Graphics::Color::CYAN)
 
+    linear_layout.addView(@total_beacon_text_view)
     linear_layout.addView(@closest_beacon_text_view)
     linear_layout.addView(@beacon_text_view)
   end
@@ -36,14 +42,23 @@ class MainActivity < Android::App::Activity
   def onBeaconServiceConnect
     p "onBeaconServiceConnect"
     notifier = RubyRangeNotifier.new({
+                                         beacons_found: lambda{|beacons|
+                                           runOnUiThread(RubyRunnable.new(
+                                                             {
+                                                                 run: lambda {
+                                                                     @total_beacon_text_view.setText("Total Beacons: #{beacons.size}")
+                                                                 }
+                                                             }
+                                                         ))
+                                         },
                                          closest_beacon: lambda{|beacon|
                                            runOnUiThread(RubyRunnable.new(
                                                              {
                                                                  run: lambda {
                                                                    if beacon.nil?
-                                                                     @closest_beacon_text_view.setText("Beacon: not found")
+                                                                     @closest_beacon_text_view.setText("Current Beacon: not found")
                                                                    else
-                                                                     @closest_beacon_text_view.setText("Beacon: #{beacon.getId2().toString()} - #{beacon.getId3().toString()}")
+                                                                     @closest_beacon_text_view.setText("Current Beacon: #{beacon.getId2().toString()} - #{beacon.getId3().toString()}")
                                                                    end
                                                                  }
                                                              }
@@ -54,9 +69,9 @@ class MainActivity < Android::App::Activity
                                                              {
                                                                  run: lambda {
                                                                    if beacon.nil?
-                                                                     @beacon_text_view.setText("Beacon: not found")
+                                                                     @beacon_text_view.setText("Stay Beacon: not found")
                                                                    else
-                                                                     @beacon_text_view.setText("Beacon: #{beacon.getId2().toString()} - #{beacon.getId3().toString()}")
+                                                                     @beacon_text_view.setText("Stay Beacon: #{beacon.getId2().toString()} - #{beacon.getId3().toString()}")
                                                                    end
                                                                  }
                                                              }
