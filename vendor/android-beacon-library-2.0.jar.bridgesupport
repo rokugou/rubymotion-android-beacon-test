@@ -1,0 +1,503 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<class name="org/altbeacon/beacon/AltBeacon$Builder">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="build" type="()Lorg/altbeacon/beacon/Beacon;"/>
+<method name="setMfgReserved" type="(I)Lorg/altbeacon/beacon/AltBeacon$Builder;"/>
+</class>
+<class name="org/altbeacon/beacon/AltBeacon">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/Beacon;)V"/>
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Landroid/os/Parcel;)V"/>
+<method name="getMfgReserved" type="()I"/>
+<method name="describeContents" type="()I"/>
+<method name="writeToParcel" type="(Landroid/os/Parcel;I)V"/>
+</class>
+<class name="org/altbeacon/beacon/AltBeaconParser">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="fromScanData" type="([BILandroid/bluetooth/BluetoothDevice;)Lorg/altbeacon/beacon/Beacon;"/>
+</class>
+<class name="org/altbeacon/beacon/BeaconIntentProcessor">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="onHandleIntent" type="(Landroid/content/Intent;)V"/>
+</class>
+<class name="org/altbeacon/beacon/BeaconParser$BeaconLayoutException">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+</class>
+<class name="org/altbeacon/beacon/BleNotAvailableException">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+</class>
+<class name="org/altbeacon/beacon/client/DataProviderException">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/Throwable;)V"/>
+</class>
+<class name="org/altbeacon/beacon/distance/ModelSpecificDistanceUpdater">
+<method name="doInBackground" type="([Ljava/lang/Void;)Ljava/lang/Void;"/>
+<method name="onPostExecute" type="()V"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Ljava/lang/String;Lorg/altbeacon/beacon/distance/ModelSpecificDistanceUpdater$CompletionHandler;)V"/>
+<method name="doInBackground" type="([Ljava/lang/Object;)Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService$BeaconBinder">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/BeaconService;)V"/>
+<method name="getService" type="()Lorg/altbeacon/beacon/service/BeaconService;"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService$IncomingHandler">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/BeaconService;)V"/>
+<method name="handleMessage" type="(Landroid/os/Message;)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService$ScanProcessor">
+<method name="doInBackground" type="([Lorg/altbeacon/beacon/service/BeaconService$ScanData;)Ljava/lang/Void;"/>
+<method name="onPostExecute" type="(Ljava/lang/Void;)V"/>
+<method name="onPreExecute" type="()V"/>
+<method name="onProgressUpdate" type="([Ljava/lang/Void;)V"/>
+<method name="onProgressUpdate" type="([Ljava/lang/Object;)V"/>
+<method name="onPostExecute" type="(Ljava/lang/Object;)V"/>
+<method name="doInBackground" type="([Ljava/lang/Object;)Ljava/lang/Object;"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/BeaconService;Lorg/altbeacon/beacon/service/BeaconService$1;)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="onBind" type="(Landroid/content/Intent;)Landroid/os/IBinder;"/>
+<method name="onUnbind" type="(Landroid/content/Intent;)Z"/>
+<method name="onCreate" type="()V"/>
+<method name="onDestroy" type="()V"/>
+<method name="startRangingBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;Lorg/altbeacon/beacon/service/Callback;)V"/>
+<method name="stopRangingBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="startMonitoringBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;Lorg/altbeacon/beacon/service/Callback;)V"/>
+<method name="stopMonitoringBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="setScanPeriods" type="(JJ)V"/>
+<method name="enableScanning" type="()V"/>
+<method name="disableScanning" type="()V"/>
+<method name="access$000" type="(Lorg/altbeacon/beacon/service/BeaconService;Ljava/lang/Boolean;)V" class_method="true"/>
+<method name="access$100" type="(Lorg/altbeacon/beacon/service/BeaconService;)V" class_method="true"/>
+<method name="access$300" type="(Lorg/altbeacon/beacon/service/BeaconService;)Ljava/util/List;" class_method="true"/>
+<method name="access$400" type="(Lorg/altbeacon/beacon/service/BeaconService;Lorg/altbeacon/beacon/Beacon;)V" class_method="true"/>
+<method name="access$500" type="(Lorg/altbeacon/beacon/service/BeaconService;)Ljava/lang/Object;" class_method="true"/>
+<method name="access$600" type="(Lorg/altbeacon/beacon/service/BeaconService;)Lorg/altbeacon/bluetooth/BluetoothCrashResolver;" class_method="true"/>
+</class>
+<class name="org/altbeacon/beacon/startup/StartupBroadcastReceiver">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="onReceive" type="(Landroid/content/Context;Landroid/content/Intent;)V"/>
+</class>
+<class name="org/altbeacon/bluetooth/BluetoothCrashResolver$1">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;)V"/>
+<method name="onReceive" type="(Landroid/content/Context;Landroid/content/Intent;)V"/>
+</class>
+<class name="org/altbeacon/bluetooth/BluetoothCrashResolver$DiscoveryCanceller">
+<method name="doInBackground" type="([Ljava/lang/Void;)Ljava/lang/Void;"/>
+<method name="onPostExecute" type="(Ljava/lang/Void;)V"/>
+<method name="onPreExecute" type="()V"/>
+<method name="onProgressUpdate" type="([Ljava/lang/Void;)V"/>
+<method name="onProgressUpdate" type="([Ljava/lang/Object;)V"/>
+<method name="onPostExecute" type="(Ljava/lang/Object;)V"/>
+<method name="doInBackground" type="([Ljava/lang/Object;)Ljava/lang/Object;"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;Lorg/altbeacon/bluetooth/BluetoothCrashResolver$1;)V"/>
+</class>
+<class name="org/altbeacon/beacon/Beacon$Builder">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="build" type="()Lorg/altbeacon/beacon/Beacon;"/>
+<method name="setIdentifiers" type="(Ljava/util/List;)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setId1" type="(Ljava/lang/String;)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setId2" type="(Ljava/lang/String;)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setId3" type="(Ljava/lang/String;)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setRssi" type="(I)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setTxPower" type="(I)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setBeaconTypeCode" type="(I)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setBluetoothAddress" type="(Ljava/lang/String;)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setDataFields" type="(Ljava/util/List;)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setManufacturer" type="(I)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+<method name="setBluetoothName" type="(Ljava/lang/String;)Lorg/altbeacon/beacon/Beacon$Builder;"/>
+</class>
+<class name="org/altbeacon/beacon/BeaconManager$ConsumerInfo">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/BeaconManager;Lorg/altbeacon/beacon/BeaconManager$1;)V"/>
+</class>
+<class name="org/altbeacon/beacon/BeaconManager">
+<method name="setDebug" type="(Z)V" class_method="true"/>
+<method name="setForegroundScanPeriod" type="(J)V"/>
+<method name="setForegroundBetweenScanPeriod" type="(J)V"/>
+<method name="setBackgroundScanPeriod" type="(J)V"/>
+<method name="setBackgroundBetweenScanPeriod" type="(J)V"/>
+<method name="getInstanceForApplication" type="(Landroid/content/Context;)Lorg/altbeacon/beacon/BeaconManager;" class_method="true"/>
+<method name="getBeaconParsers" type="()Ljava/util/List;"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Context;)V"/>
+<method name="checkAvailability" type="()Z"/>
+<method name="bind" type="(Lorg/altbeacon/beacon/BeaconConsumer;)V"/>
+<method name="unbind" type="(Lorg/altbeacon/beacon/BeaconConsumer;)V"/>
+<method name="isBound" type="(Lorg/altbeacon/beacon/BeaconConsumer;)Z"/>
+<method name="setBackgroundMode" type="(Z)V"/>
+<method name="isBackgroundModeUninitialized" type="()Z"/>
+<method name="setRangeNotifier" type="(Lorg/altbeacon/beacon/RangeNotifier;)V"/>
+<method name="setMonitorNotifier" type="(Lorg/altbeacon/beacon/MonitorNotifier;)V"/>
+<method name="startRangingBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="stopRangingBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="startMonitoringBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="stopMonitoringBeaconsInRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="updateScanPeriods" type="()V"/>
+<method name="getMonitoringNotifier" type="()Lorg/altbeacon/beacon/MonitorNotifier;"/>
+<method name="getRangingNotifier" type="()Lorg/altbeacon/beacon/RangeNotifier;"/>
+<method name="getMonitoredRegions" type="()Ljava/util/Collection;"/>
+<method name="getRangedRegions" type="()Ljava/util/Collection;"/>
+<method name="logDebug" type="(Ljava/lang/String;Ljava/lang/String;)V" class_method="true"/>
+<method name="logDebug" type="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V" class_method="true"/>
+<method name="getDistanceModelUpdateUrl" type="()Ljava/lang/String;" class_method="true"/>
+<method name="setDistanceModelUpdateUrl" type="(Ljava/lang/String;)V" class_method="true"/>
+<method name="setBeaconSimulator" type="(Lorg/altbeacon/beacon/simulator/BeaconSimulator;)V" class_method="true"/>
+<method name="getBeaconSimulator" type="()Lorg/altbeacon/beacon/simulator/BeaconSimulator;" class_method="true"/>
+<method name="setDataRequestNotifier" type="(Lorg/altbeacon/beacon/RangeNotifier;)V"/>
+<method name="getDataRequestNotifier" type="()Lorg/altbeacon/beacon/RangeNotifier;"/>
+<method name="access$102" type="(Lorg/altbeacon/beacon/BeaconManager;Landroid/os/Messenger;)Landroid/os/Messenger;" class_method="true"/>
+<method name="access$200" type="(Lorg/altbeacon/beacon/BeaconManager;)Ljava/util/Map;" class_method="true"/>
+</class>
+<class name="org/altbeacon/beacon/BeaconParser">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="setBeaconLayout" type="(Ljava/lang/String;)Lorg/altbeacon/beacon/BeaconParser;"/>
+<method name="getMatchingBeaconTypeCode" type="()Ljava/lang/Long;"/>
+<method name="fromScanData" type="([BILandroid/bluetooth/BluetoothDevice;)Lorg/altbeacon/beacon/Beacon;"/>
+<method name="fromScanData" type="([BILandroid/bluetooth/BluetoothDevice;Lorg/altbeacon/beacon/Beacon;)Lorg/altbeacon/beacon/Beacon;"/>
+<method name="getBeaconAdvertisementData" type="(Lorg/altbeacon/beacon/Beacon;)[B"/>
+<method name="setMatchingBeaconTypeCode" type="(Ljava/lang/Long;)Lorg/altbeacon/beacon/BeaconParser;"/>
+<method name="bytesToHex" type="([B)Ljava/lang/String;" class_method="true"/>
+<method name="longToByteArray" type="(JI)[B"/>
+</class>
+<class name="org/altbeacon/beacon/BuildConfig">
+<method name="&lt;init&gt;" type="()V"/>
+</class>
+<class name="org/altbeacon/beacon/distance/AndroidModel">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="forThisDevice" type="()Lorg/altbeacon/beacon/distance/AndroidModel;" class_method="true"/>
+<method name="getVersion" type="()Ljava/lang/String;"/>
+<method name="setVersion" type="(Ljava/lang/String;)V"/>
+<method name="getBuildNumber" type="()Ljava/lang/String;"/>
+<method name="getModel" type="()Ljava/lang/String;"/>
+<method name="getManufacturer" type="()Ljava/lang/String;"/>
+<method name="setBuildNumber" type="(Ljava/lang/String;)V"/>
+<method name="setModel" type="(Ljava/lang/String;)V"/>
+<method name="setManufacturer" type="(Ljava/lang/String;)V"/>
+<method name="matchScore" type="(Lorg/altbeacon/beacon/distance/AndroidModel;)I"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+</class>
+<class name="org/altbeacon/beacon/distance/DistanceConfigFetcher">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="getResponseCode" type="()I"/>
+<method name="getResponseString" type="()Ljava/lang/String;"/>
+<method name="getException" type="()Ljava/lang/Exception;"/>
+<method name="request" type="()V"/>
+</class>
+<class name="org/altbeacon/beacon/Identifier">
+<method name="parse" type="(Ljava/lang/String;)Lorg/altbeacon/beacon/Identifier;" class_method="true"/>
+<method name="fromInt" type="(I)Lorg/altbeacon/beacon/Identifier;" class_method="true"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/Identifier;)V"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="toInt" type="()I"/>
+<method name="toByteArrayOfSpecifiedEndianness" type="(Z)[B"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+<method name="toHexString" type="()Ljava/lang/String;"/>
+<method name="compareTo" type="(Lorg/altbeacon/beacon/Identifier;)I"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService$ScanData">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/BeaconService;Landroid/bluetooth/BluetoothDevice;I[B)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/Callback">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;)V"/>
+<method name="getIntent" type="()Landroid/content/Intent;"/>
+<method name="setIntent" type="(Landroid/content/Intent;)V"/>
+<method name="call" type="(Landroid/content/Context;Ljava/lang/String;Landroid/os/Parcelable;)Z"/>
+</class>
+<class name="org/altbeacon/beacon/service/MonitorState">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/Callback;)V"/>
+<method name="getCallback" type="()Lorg/altbeacon/beacon/service/Callback;"/>
+<method name="markInside" type="()Z"/>
+<method name="isNewlyOutside" type="()Z"/>
+<method name="isInside" type="()Z"/>
+</class>
+<class name="org/altbeacon/beacon/service/RangedBeacon$1">
+</class>
+<class name="org/altbeacon/beacon/service/RangedBeacon">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/Beacon;)V"/>
+<method name="isTracked" type="()Z"/>
+<method name="setTracked" type="(Z)V"/>
+<method name="getBeacon" type="()Lorg/altbeacon/beacon/Beacon;"/>
+<method name="commitMeasurements" type="()V"/>
+<method name="setSampleExpirationMilliseconds" type="(J)V" class_method="true"/>
+<method name="addMeasurement" type="(Ljava/lang/Integer;)V"/>
+<method name="noMeasurementsAvailable" type="()Z"/>
+<method name="addRangeMeasurement" type="(Ljava/lang/Integer;)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/RangeState">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/Callback;)V"/>
+<method name="getCallback" type="()Lorg/altbeacon/beacon/service/Callback;"/>
+<method name="addBeacon" type="(Lorg/altbeacon/beacon/Beacon;)V"/>
+<method name="finalizeBeacons" type="()Ljava/util/Collection;"/>
+</class>
+<class name="org/altbeacon/beacon/startup/RegionBootstrap$1">
+</class>
+<class name="org/altbeacon/beacon/startup/RegionBootstrap">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/startup/BootstrapNotifier;Lorg/altbeacon/beacon/Region;)V"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/startup/BootstrapNotifier;Ljava/util/List;)V"/>
+<method name="disable" type="()V"/>
+<method name="access$100" type="(Lorg/altbeacon/beacon/startup/RegionBootstrap;)Lorg/altbeacon/beacon/startup/BootstrapNotifier;" class_method="true"/>
+<method name="access$200" type="(Lorg/altbeacon/beacon/startup/RegionBootstrap;)Lorg/altbeacon/beacon/BeaconManager;" class_method="true"/>
+<method name="access$300" type="(Lorg/altbeacon/beacon/startup/RegionBootstrap;)Ljava/util/List;" class_method="true"/>
+</class>
+<class name="org/altbeacon/bluetooth/BluetoothCrashResolver">
+<method name="&lt;init&gt;" type="(Landroid/content/Context;)V"/>
+<method name="start" type="()V"/>
+<method name="stop" type="()V"/>
+<method name="enableDebug" type="()V"/>
+<method name="disableDebug" type="()V"/>
+<method name="notifyScannedDevice" type="(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)V"/>
+<method name="crashDetected" type="()V"/>
+<method name="getLastBluetoothCrashDetectionTime" type="()J"/>
+<method name="getDetectedCrashCount" type="()I"/>
+<method name="getRecoveryAttemptCount" type="()I"/>
+<method name="isLastRecoverySucceeded" type="()Z"/>
+<method name="isRecoveryInProgress" type="()Z"/>
+<method name="setUpdateNotifier" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver$UpdateNotifier;)V"/>
+<method name="forceFlush" type="()V"/>
+<method name="access$100" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;)Z" class_method="true"/>
+<method name="access$200" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;)Z" class_method="true"/>
+<method name="access$300" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;)V" class_method="true"/>
+<method name="access$402" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;Z)Z" class_method="true"/>
+<method name="access$502" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;J)J" class_method="true"/>
+<method name="access$600" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;)J" class_method="true"/>
+<method name="access$500" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;)J" class_method="true"/>
+<method name="access$602" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;J)J" class_method="true"/>
+<method name="access$400" type="(Lorg/altbeacon/bluetooth/BluetoothCrashResolver;)Z" class_method="true"/>
+</class>
+<interface name="org/altbeacon/beacon/BeaconConsumer">
+<method name="onBeaconServiceConnect" type="()V"/>
+<method name="getApplicationContext" type="()Landroid/content/Context;"/>
+<method name="unbindService" type="(Landroid/content/ServiceConnection;)V"/>
+<method name="bindService" type="(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z"/>
+</interface>
+<interface name="org/altbeacon/beacon/BeaconData">
+<method name="getLatitude" type="()Ljava/lang/Double;"/>
+<method name="setLatitude" type="(Ljava/lang/Double;)V"/>
+<method name="setLongitude" type="(Ljava/lang/Double;)V"/>
+<method name="getLongitude" type="()Ljava/lang/Double;"/>
+<method name="get" type="(Ljava/lang/String;)Ljava/lang/String;"/>
+<method name="set" type="(Ljava/lang/String;Ljava/lang/String;)V"/>
+<method name="sync" type="(Lorg/altbeacon/beacon/BeaconDataNotifier;)V"/>
+<method name="isDirty" type="()Z"/>
+</interface>
+<interface name="org/altbeacon/beacon/BeaconDataNotifier">
+<method name="beaconDataUpdate" type="(Lorg/altbeacon/beacon/Beacon;Lorg/altbeacon/beacon/BeaconData;Lorg/altbeacon/beacon/client/DataProviderException;)V"/>
+</interface>
+<interface name="org/altbeacon/beacon/client/BeaconDataFactory">
+<method name="requestBeaconData" type="(Lorg/altbeacon/beacon/Beacon;Lorg/altbeacon/beacon/BeaconDataNotifier;)V"/>
+</interface>
+<interface name="org/altbeacon/beacon/distance/DistanceCalculator">
+<method name="calculateDistance" type="(ID)D"/>
+</interface>
+<interface name="org/altbeacon/beacon/distance/ModelSpecificDistanceUpdater$CompletionHandler">
+<method name="onComplete" type="(Ljava/lang/String;Ljava/lang/Exception;I)V"/>
+</interface>
+<interface name="org/altbeacon/beacon/MonitorNotifier">
+<method name="didEnterRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="didExitRegion" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="didDetermineStateForRegion" type="(ILorg/altbeacon/beacon/Region;)V"/>
+</interface>
+<interface name="org/altbeacon/beacon/RangeNotifier">
+<method name="didRangeBeaconsInRegion" type="(Ljava/util/Collection;Lorg/altbeacon/beacon/Region;)V"/>
+</interface>
+<interface name="org/altbeacon/beacon/simulator/BeaconSimulator">
+<method name="getBeacons" type="()Ljava/util/List;"/>
+</interface>
+<interface name="org/altbeacon/bluetooth/BluetoothCrashResolver$UpdateNotifier">
+<method name="dataUpdated" type="()V"/>
+</interface>
+<class name="org/altbeacon/beacon/AltBeacon$1">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Lorg/altbeacon/beacon/AltBeacon;"/>
+<method name="newArray" type="(I)[Lorg/altbeacon/beacon/AltBeacon;"/>
+<method name="newArray" type="(I)[Ljava/lang/Object;"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/Beacon$1">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Lorg/altbeacon/beacon/Beacon;"/>
+<method name="newArray" type="(I)[Lorg/altbeacon/beacon/Beacon;"/>
+<method name="newArray" type="(I)[Ljava/lang/Object;"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/Beacon">
+<method name="setDistanceCalculator" type="(Lorg/altbeacon/beacon/distance/DistanceCalculator;)V" class_method="true"/>
+<method name="getDistanceCalculator" type="()Lorg/altbeacon/beacon/distance/DistanceCalculator;" class_method="true"/>
+<method name="&lt;init&gt;" type="(Landroid/os/Parcel;)V"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/Beacon;)V"/>
+<method name="&lt;init&gt;" type="()V"/>
+<method name="setRunningAverageRssi" type="(D)V"/>
+<method name="setRssi" type="(I)V"/>
+<method name="getManufacturer" type="()I"/>
+<method name="getIdentifier" type="(I)Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getId1" type="()Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getId2" type="()Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getId3" type="()Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getDataFields" type="()Ljava/util/List;"/>
+<method name="getIdentifiers" type="()Ljava/util/List;"/>
+<method name="getDistance" type="()D"/>
+<method name="getRssi" type="()I"/>
+<method name="getTxPower" type="()I"/>
+<method name="getBeaconTypeCode" type="()I"/>
+<method name="getBluetoothAddress" type="()Ljava/lang/String;"/>
+<method name="getBluetoothName" type="()Ljava/lang/String;"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+<method name="requestData" type="(Lorg/altbeacon/beacon/BeaconDataNotifier;)V"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="describeContents" type="()I"/>
+<method name="writeToParcel" type="(Landroid/os/Parcel;I)V"/>
+<method name="calculateDistance" type="(ID)Ljava/lang/Double;" class_method="true"/>
+</class>
+<class name="org/altbeacon/beacon/BeaconManager$1">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/BeaconManager;)V"/>
+<method name="onServiceConnected" type="(Landroid/content/ComponentName;Landroid/os/IBinder;)V"/>
+<method name="onServiceDisconnected" type="(Landroid/content/ComponentName;)V"/>
+</class>
+<class name="org/altbeacon/beacon/client/NullBeaconDataFactory$1">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/client/NullBeaconDataFactory;Lorg/altbeacon/beacon/BeaconDataNotifier;)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="org/altbeacon/beacon/client/NullBeaconDataFactory">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="requestBeaconData" type="(Lorg/altbeacon/beacon/Beacon;Lorg/altbeacon/beacon/BeaconDataNotifier;)V"/>
+</class>
+<class name="org/altbeacon/beacon/distance/CurveFittedDistanceCalculator">
+<method name="&lt;init&gt;" type="(DDD)V"/>
+<method name="calculateDistance" type="(ID)D"/>
+</class>
+<class name="org/altbeacon/beacon/distance/ModelSpecificDistanceCalculator$1">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;)V"/>
+<method name="onComplete" type="(Ljava/lang/String;Ljava/lang/Exception;I)V"/>
+</class>
+<class name="org/altbeacon/beacon/distance/ModelSpecificDistanceCalculator">
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Ljava/lang/String;Lorg/altbeacon/beacon/distance/AndroidModel;)V"/>
+<method name="getModel" type="()Lorg/altbeacon/beacon/distance/AndroidModel;"/>
+<method name="getRequestedModel" type="()Lorg/altbeacon/beacon/distance/AndroidModel;"/>
+<method name="calculateDistance" type="(ID)D"/>
+<method name="access$000" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;)Ljava/lang/String;" class_method="true"/>
+<method name="access$100" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;Ljava/lang/String;)V" class_method="true"/>
+<method name="access$200" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;Ljava/lang/String;)Z" class_method="true"/>
+<method name="access$300" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;)Z" class_method="true"/>
+<method name="access$402" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;Lorg/altbeacon/beacon/distance/DistanceCalculator;)Lorg/altbeacon/beacon/distance/DistanceCalculator;" class_method="true"/>
+<method name="access$500" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;)Lorg/altbeacon/beacon/distance/AndroidModel;" class_method="true"/>
+<method name="access$600" type="(Lorg/altbeacon/beacon/distance/ModelSpecificDistanceCalculator;Lorg/altbeacon/beacon/distance/AndroidModel;)Lorg/altbeacon/beacon/distance/DistanceCalculator;" class_method="true"/>
+</class>
+<class name="org/altbeacon/beacon/powersave/BackgroundPowerSaver">
+<method name="&lt;init&gt;" type="(Landroid/content/Context;Z)V"/>
+<method name="&lt;init&gt;" type="(Landroid/content/Context;)V"/>
+<method name="onActivityCreated" type="(Landroid/app/Activity;Landroid/os/Bundle;)V"/>
+<method name="onActivityStarted" type="(Landroid/app/Activity;)V"/>
+<method name="onActivityResumed" type="(Landroid/app/Activity;)V"/>
+<method name="onActivityPaused" type="(Landroid/app/Activity;)V"/>
+<method name="onActivityStopped" type="(Landroid/app/Activity;)V"/>
+<method name="onActivitySaveInstanceState" type="(Landroid/app/Activity;Landroid/os/Bundle;)V"/>
+<method name="onActivityDestroyed" type="(Landroid/app/Activity;)V"/>
+</class>
+<class name="org/altbeacon/beacon/Region$1">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Lorg/altbeacon/beacon/Region;"/>
+<method name="newArray" type="(I)[Lorg/altbeacon/beacon/Region;"/>
+<method name="newArray" type="(I)[Ljava/lang/Object;"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/Region">
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Lorg/altbeacon/beacon/Identifier;Lorg/altbeacon/beacon/Identifier;Lorg/altbeacon/beacon/Identifier;)V"/>
+<method name="&lt;init&gt;" type="(Ljava/lang/String;Ljava/util/ArrayList;)V"/>
+<method name="getId1" type="()Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getId2" type="()Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getId3" type="()Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getIdentifier" type="(I)Lorg/altbeacon/beacon/Identifier;"/>
+<method name="getUniqueId" type="()Ljava/lang/String;"/>
+<method name="matchesBeacon" type="(Lorg/altbeacon/beacon/Beacon;)Z"/>
+<method name="hashCode" type="()I"/>
+<method name="equals" type="(Ljava/lang/Object;)Z"/>
+<method name="toString" type="()Ljava/lang/String;"/>
+<method name="describeContents" type="()I"/>
+<method name="writeToParcel" type="(Landroid/os/Parcel;I)V"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/Region;)V"/>
+<method name="&lt;init&gt;" type="()V"/>
+<method name="&lt;init&gt;" type="(Landroid/os/Parcel;)V"/>
+<method name="clone" type="()Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService$1">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/BeaconService;)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService$2">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/BeaconService;)V"/>
+<method name="run" type="()V"/>
+</class>
+<class name="org/altbeacon/beacon/service/BeaconService$3">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/BeaconService;)V"/>
+<method name="onLeScan" type="(Landroid/bluetooth/BluetoothDevice;I[B)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/MonitoringData$1">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Lorg/altbeacon/beacon/service/MonitoringData;"/>
+<method name="newArray" type="(I)[Lorg/altbeacon/beacon/service/MonitoringData;"/>
+<method name="newArray" type="(I)[Ljava/lang/Object;"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/service/MonitoringData">
+<method name="&lt;init&gt;" type="(ZLorg/altbeacon/beacon/Region;)V"/>
+<method name="isInside" type="()Z"/>
+<method name="getRegion" type="()Lorg/altbeacon/beacon/Region;"/>
+<method name="describeContents" type="()I"/>
+<method name="writeToParcel" type="(Landroid/os/Parcel;I)V"/>
+<method name="&lt;init&gt;" type="(Landroid/os/Parcel;Lorg/altbeacon/beacon/service/MonitoringData$1;)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/RangedBeacon$Measurement">
+<method name="compareTo" type="(Lorg/altbeacon/beacon/service/RangedBeacon$Measurement;)I"/>
+<method name="compareTo" type="(Ljava/lang/Object;)I"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/service/RangedBeacon;Lorg/altbeacon/beacon/service/RangedBeacon$1;)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/RangingData$1">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Lorg/altbeacon/beacon/service/RangingData;"/>
+<method name="newArray" type="(I)[Lorg/altbeacon/beacon/service/RangingData;"/>
+<method name="newArray" type="(I)[Ljava/lang/Object;"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/service/RangingData">
+<method name="&lt;init&gt;" type="(Ljava/util/Collection;Lorg/altbeacon/beacon/Region;)V"/>
+<method name="getBeacons" type="()Ljava/util/Collection;"/>
+<method name="getRegion" type="()Lorg/altbeacon/beacon/Region;"/>
+<method name="describeContents" type="()I"/>
+<method name="writeToParcel" type="(Landroid/os/Parcel;I)V"/>
+<method name="&lt;init&gt;" type="(Landroid/os/Parcel;Lorg/altbeacon/beacon/service/RangingData$1;)V"/>
+</class>
+<class name="org/altbeacon/beacon/service/StartRMData$1">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Lorg/altbeacon/beacon/service/StartRMData;"/>
+<method name="newArray" type="(I)[Lorg/altbeacon/beacon/service/StartRMData;"/>
+<method name="newArray" type="(I)[Ljava/lang/Object;"/>
+<method name="createFromParcel" type="(Landroid/os/Parcel;)Ljava/lang/Object;"/>
+</class>
+<class name="org/altbeacon/beacon/service/StartRMData">
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/Region;Ljava/lang/String;)V"/>
+<method name="&lt;init&gt;" type="(JJ)V"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/Region;Ljava/lang/String;JJ)V"/>
+<method name="getScanPeriod" type="()J"/>
+<method name="getBetweenScanPeriod" type="()J"/>
+<method name="getRegionData" type="()Lorg/altbeacon/beacon/Region;"/>
+<method name="getCallbackPackageName" type="()Ljava/lang/String;"/>
+<method name="describeContents" type="()I"/>
+<method name="writeToParcel" type="(Landroid/os/Parcel;I)V"/>
+<method name="&lt;init&gt;" type="(Landroid/os/Parcel;Lorg/altbeacon/beacon/service/StartRMData$1;)V"/>
+</class>
+<class name="org/altbeacon/beacon/simulator/StaticBeaconSimulator">
+<method name="&lt;init&gt;" type="()V"/>
+<method name="getBeacons" type="()Ljava/util/List;"/>
+<method name="setBeacons" type="(Ljava/util/List;)V"/>
+</class>
+<class name="org/altbeacon/beacon/startup/RegionBootstrap$InternalBeaconConsumer">
+<method name="onBeaconServiceConnect" type="()V"/>
+<method name="bindService" type="(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z"/>
+<method name="getApplicationContext" type="()Landroid/content/Context;"/>
+<method name="unbindService" type="(Landroid/content/ServiceConnection;)V"/>
+<method name="&lt;init&gt;" type="(Lorg/altbeacon/beacon/startup/RegionBootstrap;Lorg/altbeacon/beacon/startup/RegionBootstrap$1;)V"/>
+</class>
+</signatures>
